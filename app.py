@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
+import sys
 
 app = Flask(__name__)
 
@@ -41,4 +42,5 @@ def delete_todo(todo_id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
+    app.run(debug=True, port=port)
