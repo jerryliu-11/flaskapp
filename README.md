@@ -1,5 +1,14 @@
 # flaskapp
 
+## Run
+
+```bash
+source venv/bin/activate && python app.py
+
+source venv/bin/activate && python app.py 5001
+
+source venv/bin/activate && python app.py 5002
+```
 
 ## Cmd
 
@@ -27,4 +36,5 @@ cd /tmp/feature-2
 
 git worktree remove /tmp/feature-1
 
+git worktree remove /tmp/feature-2
 ```
