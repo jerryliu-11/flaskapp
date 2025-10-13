@@ -52,13 +52,18 @@ jobs:
                - Test coverage
                - Following conventions in CLAUDE.md
 
-            3. For EACH specific issue you find, add a line-by-line review comment using:
-               gh pr review <PR_NUMBER> --comment --body "Line-specific feedback" --file <FILE_PATH> --line <LINE_NUMBER>
+            3. For EACH specific issue you find, add a line-by-line review comment with a code suggestion using GitHub's suggestion syntax:
+               gh pr review <PR_NUMBER> --comment --body $'[Your feedback here]\n\n```suggestion\n[corrected code]\n```' --file <FILE_PATH> --line <LINE_NUMBER>
+
+               Example:
+               gh pr review 123 --comment --body $'This comment should be removed.\n\n```suggestion\n\n```' --file app.py --line 8
+
+               For multi-line suggestions, you can suggest replacing multiple lines of code.
 
             4. After adding all line-specific comments, submit a summary review using:
                gh pr review <PR_NUMBER> --comment --body "Overall summary of review findings"
 
-            Be constructive, specific, and actionable in your feedback. Reference specific lines and suggest concrete improvements.
+            Be constructive, specific, and actionable. Use the ```suggestion syntax to provide code fixes that users can commit with one click.
 
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
