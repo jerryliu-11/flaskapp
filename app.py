@@ -5,16 +5,7 @@ app = Flask(__name__)
 
 todos = []
 
-#wrgreergerretgergerghrte
-
-
-
-
-
-
-
-
-# ???
+#ewfewtw4 
 
 
 class Todo:
